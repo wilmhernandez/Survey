@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Question {{display}} {% endblock %}
+
+{% block content %}
+  <h1>{{question}}</h1>
+
+  <form action="/answer" method="post">
+    {% if ques == 2 %}
+      <input type="radio" name="option" id="less-than" required>
+      <label for="less-than">{{list[0]}}</label>
+      <input type="radio" name="option" id="greater-than" required>
+      <label for="greater-than">{{list[1]}}</label>
+    {% else %}
+      <input type="radio" name="option" id="answer-yes" required>
+      <label for="answer-yes">YES</label>
+      <input type="radio" name="option" id="answer-no" required>
+      <label for="answer-no">NO</label>
+    {% endif %}
+    <p>
+      {% if ques == 3 %}
+        <button>Submit Questionnaire</button>
+      {% else %}
+        <button>Next Question</button>
+      {% endif %}
+    </p>
+  </form>
+{% endblock %}
