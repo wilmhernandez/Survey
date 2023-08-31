@@ -7,14 +7,14 @@
 
   <form action="/answer" method="post">
     {% if ques == 2 %}
-      <input type="radio" name="option" id="less-than" required>
+      <input type="radio" name="option" id="less-than" value="Less than $10,000">
       <label for="less-than">{{list[0]}}</label>
-      <input type="radio" name="option" id="greater-than" required>
+      <input type="radio" name="option" id="greater-than" value="$10,000 or more">
       <label for="greater-than">{{list[1]}}</label>
     {% else %}
-      <input type="radio" name="option" id="answer-yes" required>
+      <input type="radio" name="option" id="answer-yes" value="yes" required>
       <label for="answer-yes">YES</label>
-      <input type="radio" name="option" id="answer-no" required>
+      <input type="radio" name="option" id="answer-no" value="no" required>
       <label for="answer-no">NO</label>
     {% endif %}
     <p>
